@@ -1,0 +1,61 @@
+body {
+  background-color: #ffdeed;
+  font-family: sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+.card {
+  background: white;
+  padding: 25px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+  width: 80%;
+  max-width: 320px;
+}
+
+.sticker img {
+  width: 90px;
+  height: 90px;
+}
+
+.title {
+  color: #ff4d8d;
+  font-size: 15px;
+  margin: 15px 0 5px;
+}
+
+.meter-display {
+  font-size: 42px;
+  font-weight: bold;
+  color: #ff2a75;
+  margin: 10px 0;
+}
+
+.progress-bar {
+  background: #ffe3ed;
+  height: 12px;
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 15px 0;
+}
+
+.progress-fill {
+  background: #ff2a75;
+  height: 100%;
+  width: 0%;
+}
+
+button {
+  background: #ff2a75;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  border-radius: 20px;
+  cursor: pointer;
+}

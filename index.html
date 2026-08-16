@@ -1,31 +1,60 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="my">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Love Meter</title>
   <link rel="stylesheet" href="style.css">
-  <!-- GSAP Animation Library (ဖုန်းမှာ အလုပ်လုပ်ရန် CDN Link) -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
 </head>
 <body>
 
-  <div class="card">
+  <div class="card" id="questionCard">
     <div class="sticker">
-      <img src="https://www.google.com/search?q=cute+sticker+telegram&sca_esv=1503fdd29559cc79&biw=392&bih=770&sxsrf=APpeQntcYcrYi0ufRyf3zcVIufUHA1Z52g%3A1786855448809&ei=GECBarTuMICe4-EP2fij6QI&udm=2&oq=cute+sticker+&gs_lp=EhNtb2JpbGUtZ3dzLXdpei1zZXJwIg1jdXRlIHN0aWNrZXIgKgIIADIKECMYyQIY8AUYJzIKEAAYgAQYigUYQzIJEAAYgAQYChgLMgkQABiABBgKGAsyCRAAGIAEGAoYCzIJEAAYgAQYChgLMgUQABiABDIKEAAYgAQYFBiHAki6IFCiEliiEnAAeAKQAQCYAYYBoAGEAqoBAzAuMrgBAcgBAPgBAZgCAqACkQHCAgQQABhHmAMAiAYBkAYIkgcDMS4xoAerEbIHAzAuMbgHiAHCBwUyLTEuMcgHEIAIAQ&sclient=mobile-gws-wiz-serp#sv=CAMSVxoyKhBlLWUtdnVnaUdWVlE3ZzhNMg5lLXZ1Z2lHVlZRN2c4TToONFh6ZFdGeW14RXVseU0gBCoXCgFzEhBlLWUtdnVnaUdWVlE3ZzhNGAEwAUoECAEQAhgHINvB55UGSggQAhgBIAIoAQ" alt="Cute Sticker">
+      <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExM3Zyd2V0ZDVw/giphy.gif" alt="Cute Bear">
     </div>
+    <h2 class="title">ခဲခဲကိုချစ်လား? 💖</h2>
+    <div class="btn-group">
+      <button id="yesBtn" onclick="startLoveMeter()">YES 💕</button>
+      <button id="noBtn" onmouseover="moveNoBtn()" onclick="moveNoBtn()">NO ❌</button>
+    </div>
+  </div>
 
-    <h3 class="title">Almost maximum capacity! 🎀✨</h3>
-    
-    <!-- Percentage ဂဏန်းပြမယ့်နေရာ -->
+  <div class="card hidden" id="meterCard">
+    <div class="sticker">
+      <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExM3Zyd2V0ZDVw/giphy.gif" alt="Happy Bear">
+    </div>
+    <h3 class="status-text" id="statusText">Measuring love level... 💕</h3>
     <div class="meter-display" id="meterDisplay">0%</div>
-
-    <!-- Progress Bar -->
     <div class="progress-bar">
       <div class="progress-fill" id="progressFill"></div>
     </div>
+  </div>
 
-    <button onclick="startLoveMeter()">Start Meter ❤️</button>
+  <div class="card hidden" id="letterCard">
+    <div class="envelope-box" id="envelopeBox" onclick="openEnvelope()">
+      <div class="envelope-front">
+        <div class="sticker">
+          <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExM3Zyd2V0ZDVw/giphy.gif" alt="Cat Sticker">
+        </div>
+        <h2>I KNEW IT! 😻</h2>
+        <p class="love-subtitle">I love you 1000% 💌</p>
+        <div class="click-hint">Click envelope to open 👇</div>
+      </div>
+
+      <div class="letter" id="letter">
+        <div class="letter-sticker">
+          <img src="https://media.giphy.com/media/v1.Y2lkPTc5MGI3NjExM3Zyd2V0ZDVw/giphy.gif" alt="Cute Sticker">
+        </div>
+        <h3>Dear Special Someone, 💖</h3>
+        <p>
+          ရင်ထဲမှာရှိတဲ့ ခံစားချက်တွေကို ချစ်ရသူ သိစေချင်ပါတယ်။ <br>
+          အမြဲတမ်း ကိုယ့်ဘေးနားမှာ ရှိပေးလို့ ကျေးဇူးအများကြီးတင်ပါတယ်နော်။ 💕
+        </p>
+        <div class="signature">Forever Yours 💌</div>
+        <button class="close-btn" onclick="event.stopPropagation(); closeEnvelope();">Close ✖</button>
+      </div>
+    </div>
   </div>
 
   <script src="script.js"></script>
